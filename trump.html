@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        .bg {
+            position: absolute;
+            width: 100%;
+
+        }
+
+        .bg img {
+            position: relative;
+            width: 100%;
+            height: 90vw;
+        }
+
+        label.logo {
+            float: left;
+            left: 5%;
+            position: absolute;
+        }
+
+        .logo img {
+            position: relative;
+            font-size: 13vw;
+        }
+
+        nav {
+            position: relative;
+            top: 3vw;
+            z-index: 2;
+        }
+
+        nav ul {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 1vw 2vw;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 1.5vw;
+        }
+
+        .drop {
+            display: none;
+        }
+
+        nav ul li:hover .drop {
+            position: relative;
+            display: block;
+
+        }
+
+        .drop ul {
+            display: block;
+            position: relative;
+            top: 0.5vw;
+            color: black;
+            background-image: url(down.jpeg);
+        }
+
+        .drop ul li {
+            position: relative;
+            margin: 0.5vw 0;
+        }
+
+        a.active,
+        a:hover {
+            background: #ff4c4c;
+            transition: .5s;
+        }
+
+        .firsttext {
+            position: relative;
+    color: white;
+    font-size: 1.5vw;
+    top: 5vw;
+    margin: 2vw 10vw;
+    text-align: center;
+    font-family: "Times New Roman";
+    font-style: normal;
+    font-weight: normal;
+        }
+        .contact-button {
+    text-decoration: none;
+    width: 100%;
+    max-width: 15vw;
+    height: 3vw;
+    display: block;
+    line-height: 3vw;
+    letter-spacing: 0.3vw;
+    position: relative;
+    text-align: center;
+    left: 5%;
+    color: #000000;
+    top: 12vw;
+
+}
+
+.contact-button div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.contact-button span.bg {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: -5px;
+    top: 0;
+    transition: all .3s ease-in-out;
+    background-color: #ffffff;
+    transform: skewX(-19deg);
+
+}
+
+.contact-button:hover span.bg {
+    width: 110%;
+}
+
+.contact-button span.base {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+
+}
+
+.contact-button span.text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+.contact-button:hover span.text {
+    color: #1d1d1d;
+}
+
+.mid {
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+    position: relative;
+    font-size: 3.3vw;
+    margin: 25vw 0 4vw 0;
+    text-align: center;
+    color: #323232;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2vw 0;
+}
+
+.card1:hover,
+.card2:hover,
+.card3:hover {
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.card2 {
+    background: #e61937;
+    width: 22vw;
+    height: 22vw;
+    border-radius: 1vw;
+    transition: 1s;
+
+}
+
+.card1,
+.card3 {
+    border: 0.1vw solid black;
+    width: 22vw;
+    height: 22vw;
+    border-radius: 1vw;
+    transition: 1s;
+
+
+}
+
+.cardi {
+    background-color: #f5eeee;
+    height: 10vw;
+    margin-bottom: 2vw;
+    background-image: url(donate.jpg);
+    background-size: cover;
+    border-radius: 1vw 1vw 0 0;
+
+}
+
+.card2 a {
+    color: black;
+    display: block;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    border: 0.2vw solid #fffdfd;
+    border-radius: 1vw;
+    padding: 0.1vw 0.5vw;
+    margin: 3vw 0;
+    left: 30%;
+    font-size: 1.3vw;
+    width: 8vw;
+}
+
+.card1 a,
+.card3 a {
+    color: black;
+    display: block;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    border: 0.2vw solid black;
+    border-radius: 1vw;
+    padding: 0.1vw 0.5vw;
+    margin: 3vw 0;
+    font-size: 1.3vw;
+    width: 8vw;
+}
+
+.card1 a {
+    left: 30.5%;
+}
+
+.card3 a {
+    right: -30.5%;
+}
+
+.card1 h2,
+.card3 h2 {
+    font-size: 2.5vw;
+    text-align: center;
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.card2 h2 {
+    font-size: 2.5vw;
+    text-align: center;
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+    color: white;
+    margin: 2vw 0;
+}
+
+.card2 p {
+    font-size: 1.5vw;
+    color: white;
+    text-align: center;
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.explain {
+    color: rgb(68, 68, 68);
+    text-align: center;
+    font-size: 1.5vw;
+    margin: 5vw 0px;
+    position: relative;
+}
+
+.wp {
+    position: relative;
+
+}
+
+.wp img {
+    position: relative;
+    width: 100%;
+}
+
+#secondttext {
+    position: relative;
+    color: white;
+    margin: -33vw 0;
+}
+
+.chnda {
+    position: absolute;
+    font-size: 4.5vw;
+    right: 12%;
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.pen {
+    position: absolute;
+    right: 4.6%;
+    margin-top: 14vw;
+    font-size: 1.35vw;
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.contact-botton {
+    text-decoration: none;
+    width: 100%;
+    max-width: 15vw;
+    height: 3vw;
+    display: block;
+    line-height: 3vw;
+    letter-spacing: 0.3vw;
+    position: absolute;
+    text-align: center;
+    right: 30.9%;
+    color: #000000;
+    top: 27vw;
+}
+
+
+
+.contact-botton div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.contact-botton span.bg {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: -5px;
+    top: 0;
+    transition: all .3s ease-in-out;
+    background-color: #ffffff;
+    transform: skewX(-19deg);
+
+}
+
+.contact-botton:hover span.bg {
+    width: 110%;
+}
+
+.contact-botton span.base {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+
+}
+
+.contact-botton span.text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+.contact-botton:hover span.text {
+    color: #1d1d1d;
+}
+
+.option {
+
+    display: flex;
+    justify-content: center;
+    position: relative;
+    column-gap: 3vw;
+    top: 21vw;
+    float: right;
+    right: 18.6%;
+
+}
+
+#dollar {
+    font-size: 1.5vw;
+    border: 0.1vw solid #814040;
+
+}
+
+.again {
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+    position: relative;
+    font-size: 3.3vw;
+    top: 35vw;
+    margin: 5vw 0;
+    text-align: center;
+    color: #323232;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6vw 4vw;
+    left: 12%;
+    margin: 38vw 0px;
+    position: absolute;
+}
+
+.card {
+    color: black;
+    background: white;
+    width: 22vw;
+    height: 25vw;
+}
+
+.png {
+    height: 10vw;
+    margin-bottom: 1.5vw;
+    background-size: 50%;
+}
+
+.png1 {
+    background-image: url(1.png);
+}
+
+.png2 {
+    background-image: url(2.png);
+}
+
+.png3 {
+    background-image: url(3.png);
+}
+
+.png4 {
+    background-image: url(4.png);
+}
+
+.png5 {
+    background-image: url(5.png);
+}
+
+.png6 {
+    background-image: url(6.png);
+}
+
+.card h2 {
+    font-size: 2.5vw;
+    text-align: center;
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+    color: black;
+    margin: 2vw 0;
+}
+
+.card p {
+    font-size: 1.5vw;
+    color: #444;
+    text-align: center;
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.card a {
+    color: black;
+    display: block;
+    background-color: white;
+    text-align: center;
+    border: 0.2vw solid #fffdfd;
+    border-radius: 1vw;
+    padding: 0.1vw 0.5vw;
+    margin: 1vw 0;
+    font-size: 1.3vw;
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.showoff {
+    width: 100%;
+    position: relative;
+    top: 35vw;
+}
+
+.showoff img {
+    width: 98.7vw;
+}
+
+.notagain {
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+    position: relative;
+    font-size: 3.3vw;
+    margin: 40vw 0 0;
+    text-align: center;
+    color: #323232;
+}
+
+.nare {
+    width: 80%;
+    position: absolute;
+    margin: 5vw 0 0;
+    left: 9%;
+}
+
+.nare img {
+    width: 80vw;
+}
+
+.voldemort {
+    position: relative;
+    top: 50vw;
+}
+
+.vol {
+    position: relative;
+
+}
+
+.vol img {
+    position: relative;
+    width: 100%;
+}
+
+.uncle img {
+    position: relative;
+    float: right;
+    width: 40vw;
+    top: -48vw;
+}
+
+#thirdtext {
+    position: relative;
+    top: -40vw;
+    color: white;
+}
+
+.fraud {
+    position: absolute;
+    font-size: 5vw;
+    left: 5%;
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.pradeep {
+    position: absolute;
+    left: 5%;
+    top: 16vw;
+    font-size: 1.3vw;
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.notagainagain {
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+    position: absolute;
+    left: 27%;
+    font-size: 3.3vw;
+    margin: -15vw 0;
+    text-align: center;
+    color: #323232;
+}
+
+.comment {
+    width: 80%;
+    position: absolute;
+    margin: 160vw 0;
+    left: 10%;
+
+}
+
+.commeny img {
+    width: 80vw;
+}
+
+
+.subscribe {
+    width: 100%;
+    position: relative;
+    top: 140vw;
+}
+
+.subscribe img {
+    width: 100vw;
+}
+
+.email h2 {
+    position: relative;
+    font-family: Times New Roman;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    font-size: 3.5vw;
+    top: 113vw;
+    color: white;
+}
+
+.gmail {
+    top: 30vw;
+    position: relative;
+    justify-content: center;
+    display: flex;
+}
+
+#emailme {
+    background: none;
+    border: 1px solid white;
+    outline: none;
+    overflow: visible;
+    width: 400px;
+    white-space: nowrap;
+    font-family: "Times New Roman";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.5vw;
+    color: rgb(0, 0, 0);
+}
+
+#letter {
+    color: white;
+    font-size: 1.5vw;
+    height: 4vw;
+    background-color: red;
+    border: 1px solid white;
+    width: 12vw;
+    cursor: pointer;
+    transition: 1s;
+}
+
+#letter:hover {
+    background-color: black;
+}
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <img src="back.jpg" alt="">
+    </div>
+    <nav>
+        <ul>
+            <li><a class="active" href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="">SHOP</a>
+                <div class="drop">
+                    <ul>
+                        <li><a href="mens.html">MENS</a></li>
+                        <li><a href="womens.html">WOMENS</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="printify.html">PRINTIFY</a></li>
+            <li><a href="#">SUPPORT</a></li>
+            <li><a href="#">COMMUNITY</a></li>
+            <li><a href="#">AFFILATES</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="firsttext">
+        WE THE PEOPLE.. THE TRUE PATRIOTS of America must awaken and take back Our country through the NEW MAGA
+        MOVEMENT.. Assuring that THE TRUE PATRIOTS MOVEMENT CONTINUES to strengthen and grow stronger in numbers
+        and conviction, We must recognized that the USA under President Trump's tenured business acumen WAS MADE
+        <br> GREAT AGAIN during His first term in office.. <br>
+
+        WE THE PEOPLE ARE THE POWER 🇺🇸 USA "ONLY RECOGNISE" President Donald J. Trump as Our RGHTFUL
+        President.. WE THE PEOPLE ARE THE POWER 🇺🇸 USA are commited to continuing President Elect (2020)
+        Donald Trump's Platform MAGA MOVEMENT.. President Trump had already MADE AMERICA GREAT AGAIN (2017-2020)
+        prior to the <br> systematic VOTER FRAUD, across Our Nation in every state, in every county.. <br>
+
+        WE THE PEOPLE ARE THE POWER 🇺🇸 USA have formed a UNIFIED PATRIOTS PLATFORM that is strategically
+        focused on the Original MAGA MOVEMENT, with the exception that President Trump had already awakened the
+        Patriotic Masses and has accomplished His set Goals & Objectives when He was seated in the White House..
+        <br>
+
+        WE THE PEOPLE ARE THE POWER 🇺🇸 USA, believe what President Trump has accomplished MUST NOW CONTINUE!!
+        Continue as an extension of MAGA. Under TRUMPS GREAT LEADERSHIP the USA has become GREAT AGAIN. All TRUE
+        TRUMP SUPPORTERS believe this.. A UNIFIED Patriots Driven NEW MAGA Agenda that will continue the TRUMP
+        <br> MESSAGE of unwavering struggle MUST EXPAND and GROW STRONGER.. <br>
+
+        AMERICA IS GREATER THAN EVER BEFORE!!! <br>
+        WE THE PEOPLE ARE THE POWER 🇺🇸 USA must continue to carry the movement forward with a UNIFIED PATRIOTS
+        Platform that does not divide Democrats against Republicans, or use Race, Sexuality, and Gender as a
+        Political Basis for DIVISION.. <br>
+
+        WE THE PEOPLE ARE THE POWER 🇺🇸 USA INCLUDE EVERYONE IN OUR STRUGGLE TO UNIFY, STRENGTHEN, EMPOWER and
+        above all build bridges with ALL CITIZENS to FORENSICLLY FOCUS on this this NEW MAGA MOVEMENT of -
+        "MAKING AMERICA GREATER AGAIN"!! <br>
+
+        "MAKING AMERICA GREATER AGAIN" (MAGA) must eclipse the former MAGA Platform and UNIFY US ALL WHO BELIEVE
+        IN TRUTH, JUSTICE AND OUR CONSTITUTIONAL FREEDOM.. NO POLITICAL ELECTED OFFICIAL has POWER OVER THE
+        PEOPLE!! <br>
+
+        WE THE PEOPLE ARE THE POWER 🇺🇸 USA GOVERN OURSELVES with the rights of Our Citizenship..We must NOT
+        STOP.. WE MUST NOT GIVE UP... WE MUST COMMIT TO CONTINUE THE MAGA METHODOLOGIES President Trump fought
+        so unselfishly for.. <br>
+
+        With a NEW BATTLE CRY for All CITIZENS.. - "MAKING AMERICA 🇺🇸 GREATER AGAIN"!!! <br>
+        The New MAGA MOVEMENT!!! <br>
+
+        Only a UNITED NEW MAGA CITIZENRY will return the United States back in control of It's People with the
+        end result to REINSTATE President TRUMP (2020) IN OFFICE.. REELECT HIM IN 2024, and REMOVE THOSE ELECTED
+        OFFICIALS WHO DONT RECOGNISE THAT "WE THE PEOPLE ARE THE POWER", "HOLD ALL THE POWER", with <br> "THE
+        POWER TO TAKE BACK 🇺🇸 AMERICA WHEN WE DEEM IT NECESSARY".. Elected Officials MUST COMMIT Their time to
+        the BETTERMENT OF THE USA, ITS CITZENRY and NOT Themselves.. <br>
+
+        GOD GLEES AMERICA and GOD BLESS ITS CITIZENRY..
+    </div>
+    <a href="#" class="contact-button">
+        <div>
+            <span class="bg"></span>
+            <span class="base"></span>
+            <span class="text">
+                JOIN WITH US
+            </span>
+        </div>
+    </a>
+</div>
+</div>
+<div class="mid">The job of a leader is to love his country <br>
+and people of the country
+</div>
+<div class="container">
+<div class="card1">
+    <div class="cardi" id="cardA"></div>
+    <h2>Our Campaign</h2>
+    <a href="#">Read More</a>
+</div>
+<div class="card2">
+    <h2>Join Volunteer</h2>
+    <p>But I must explain to you how this taken idea of denouncing pleasure and praising pain was born and I
+        will give you a coplete account of the system expound</p>
+    <a href="#">Read More</a>
+</div>
+<div class="card3">
+    <div class="cardi" id="cardB"></div>
+    <h2>Our Donation</h2>
+    <a href="#">Read More</a>
+
+</div>
+</div>
+<div class="explain">
+But I must explain to you how all Our timeline dea of denouncing pleasure and praising pain was born and <br> I
+will give you a complete account of the system.
+
+Join Our Account of the system.
+</div>
+<div class="glass">
+<div class="wp"><img src="black.jpg" alt=""></div>
+<div id="secondttext">
+    <div class="chnda">Join Our Activities <br> By a Donation</div>
+    <div class="pen">But i must explain to you how all this mistaken idea of denouncing pleasure <br> and prai
+        sing pain was born and I will give you a complete account.</div>
+    <div class="option">
+
+        <form action="https://google.com">
+            <input id="dollar" type="submit" value="&emsp13; $15&emsp13;" />
+        </form>
+        <form action="https://google.com">
+            <input id="dollar" type="submit" value="&emsp13; $50&emsp13;" />
+        </form>
+        <form action="https://google.com">
+            <input id="dollar" type="submit" value="&emsp13; $100&emsp13;" />
+        </form>
+        <form action="https://google.com">
+            <input id="dollar" type="submit" value="&emsp13; $500&emsp13;" />
+        </form>
+    </div>
+    <a href="#" class="contact-botton">
+        <div>
+            <span class="bg"></span>
+            <span class="base"></span>
+            <span class="text">
+                JOIN WITH US
+            </span>
+        </div>
+    </a>
+</div>
+</div>
+
+
+
+</div>
+<div class="showoff">
+<img src="showoff.png" alt="">
+</div>
+<div class="notagain">
+We arrange many other events and program <br> which needs in our human lifeh1
+</div>
+<div class="nare">
+<img src="nare.png" alt="">
+</div>
+<div class="voldemort">
+<div class="vol"><img src="back.jpg" alt=""></div>
+<div class="uncle"><img src="vol.png" alt=""></div>
+<div id="thirdtext">
+    <div class="fraud">Become A<br> Volunteer</div>
+    <div class="pradeep">But i must explain to you how all this mistaken idea of denouncing pleasure <br> and
+        prai
+        sing pain was born and I will give you a complete account.</div>
+
+    <a href="#" class="contact-button">
+        <div>
+            <span class="bg"></span>
+            <span class="base"></span>
+            <span class="text">
+                JOIN VOLUNTEER
+            </span>
+        </div>
+    </a>
+</div>
+</div>
+<div class="notagainagain">
+People love me very much. What <br> people say about me
+</div>
+<div class="comment">
+<img src="review.png" alt="">
+</div>
+<div class="email">
+<div class="subscribe">
+    <img src="subscribe.jpg" alt="">
+</div>
+<h2>Subscribe our newsletter to <br>
+    join our activity</h2>
+<div class="gmail">
+    <input type="email" class="news" id="emailme" placeholder="Enter your email">
+    <form action="https://google.com">
+        <input class="news" id="letter" type="submit" value="SUBSCRIBE" />
+    </form>
+</div>
+</div>
+</body>
+
+</html>
